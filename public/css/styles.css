@@ -1,0 +1,683 @@
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#wrapper {
+  margin-right: auto;
+  /* 1 */
+  margin-left: auto;
+  /* 1 */
+
+  max-width: 1200px;
+  /* 2 */
+
+  padding-right: 10px;
+  /* 3 */
+  padding-left: 10px;
+  /* 3 */
+}
+
+#background {
+  background: #333;
+  border-radius: 10px;
+  height: min-content;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link+.nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+
+
+/* About Section and Image */
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainContent {
+  justify-content: end;
+  width: 70%;
+}
+
+
+/* Resume Download Button */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  padding: 10px 30px;
+  background: #add8e6;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #ff0000;
+  transition: width 0.5s, height 0.5s;
+}
+
+.btn:hover::before {
+  width: 400px;
+  height: 300px;
+}
+
+#resume-text {
+  color: #fff;
+}
+
+/* Contact Form */
+
+.contactForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contactContent {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+}
+
+.contactContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+
+.contactContent h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contactContent .row100 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.contactContent .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
+}
+
+.contactContent .row100 .col .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+
+.contactContent .row100 .col .inputBox input,
+.contactContent .row100 .col .inputBox textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+
+.contactContent .row100 .col .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.contactContent .row100 .col .inputBox input:focus+.text,
+.contactContent .row100 .col .inputBox input:valid+.text,
+.contactContent .row100 .col .inputBox textarea:focus+.text,
+.contactContent .row100 .col .inputBox textarea:valid+.text {
+  top: -35px;
+  left: -10px;
+}
+
+.contactContent .row100 .col .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.contactContent .row100 .col .inputBox input:focus~.line,
+.contactContent .row100 .col .inputBox input:valid~.line {
+  height: 100%;
+}
+
+.contactContent .row100 .col .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+
+.contactContent .row100 .col .inputBox textarea:focus~.line,
+.contactContent .row100 .col .inputBox textarea:valid~.line {
+  height: 100%;
+}
+
+.contactContent .row100 .col .inputBox input[type="submit"] {
+  border: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  outline: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+
+
+/* Custom Footer */
+
+.navigation {
+  position: relative;
+}
+
+.navigation ul {
+  display: flex;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  line-height: 75px;
+  transition: 0.5s;
+  font-size: 30px;
+}
+
+.navigation ul li.active a .icon {
+  font-size: 20px;
+  transform: translateY(-6px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  bottom: 20px;
+  font-weight: 400;
+  transition: 0.25s;
+  text-transform: uppercase;
+  transform: scale(0);
+}
+
+.navigation ul li.active a .text {
+  transform: scale(1);
+}
+
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #f53b57;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+/* About */
+.navigation ul li:nth-child(1).active~.indicator {
+  background: #0fbcf9;
+  box-shadow: 0 15px 25px #0fbcf999;
+  transform: translateX(calc(70px * -1));
+}
+
+/* Portfolio */
+.navigation ul li:nth-child(2).active~.indicator {
+  background: #f53b57;
+  box-shadow: 0 15px 25px #f35b5799;
+  transform: translateX(calc(70px * 0));
+}
+
+/* Contact */
+.navigation ul li:nth-child(3).active~.indicator {
+  background: #ffa801;
+  box-shadow: 0 15px 25px #ffa80199;
+  transform: translateX(calc(70px * 1));
+}
+
+/* Media Breaks */
+
+@media only screen and (max-width: 375px) {
+  #nav {
+    background: transparent;
+  }
+
+  #navTitle {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  #aboutIMG {
+    max-width: 320px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 408px) {
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  #aboutIMG {
+    max-width: 380px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+  
+}
+
+@media only screen and (max-width: 472px) {
+  #aboutIMG {
+    max-width: 420px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 506px) {
+  #aboutIMG {
+    max-width: 450px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 542px) {
+  #aboutIMG {
+    max-width: 480px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 542px) {
+  #aboutIMG {
+    max-width: 520px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 614px) {
+  #aboutIMG {
+    max-width: 570px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 658px) {
+  #aboutIMG {
+    max-width: 610px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 712px) {
+  #aboutIMG {
+    max-width: 680px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 788px) {
+  #aboutIMG {
+    max-width: 750px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainContent {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 70%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 924px) {
+  #nav {
+    background: transparent;
+  }
+
+  #aboutIMG {
+    max-width: 330px;
+  }
+
+  #background {
+    background: #333;
+    border-radius: 10px;
+  }
+
+  .contactContent .row100 .col .inputBox .line {
+    width: 80%;
+  }
+
+  #submitBtn {
+    display: block;
+  }
+}
